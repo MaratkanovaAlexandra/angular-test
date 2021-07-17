@@ -1,1 +1,7 @@
-<p>task-list works!</p>
+<app-create-task (onCreateTask)="createTask($event)"></app-create-task>
+<app-task-item
+  *ngFor="let task of tasks"
+  [task]="task"
+  (onDbClick)="toggleReminder(task)"
+  (onDeleteTask)="deleteTask(task)"
+></app-task-item>
